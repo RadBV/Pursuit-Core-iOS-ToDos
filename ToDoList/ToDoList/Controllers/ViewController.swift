@@ -24,7 +24,8 @@ class ViewController: UIViewController {
     
     //MARK: - Functions
     @IBAction func segueToCreateTaskVC(_ sender: UIBarButtonItem) {
-        
+        let createVC = CreateTaskVC()
+        self.navigationController?.pushViewController(createVC, animated: true)
     }
     
 }
