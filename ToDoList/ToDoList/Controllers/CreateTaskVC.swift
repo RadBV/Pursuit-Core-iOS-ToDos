@@ -30,6 +30,7 @@ class CreateTaskVC: UIViewController {
         let button = UIButton()
         button.setTitle("Create Task", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(createTask), for: .touchUpInside)
         return button
     }()
     
@@ -42,5 +43,38 @@ class CreateTaskVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    //MARK: - OBJC Functions
+    
+    @objc func createTask() {
+        guard let task = inputTextfield.text else {
+            print("invalid input")
+            return
+        }
+        guard task != "" else {
+            print("invalid input")
+            return
+        }
+        
+        let newTask = Task(name: task, status: ToDoStatus.outstanding.rawValue)
+        try? TaskPersistenceHelper.manager.saveTask(task: newTask)
+        print(loadPersistenceData())
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    private func loadPersistenceData() -> [Task]{
+        do {
+            let tasks = try TaskPersistenceHelper.manager.getTasks()
+            return tasks
+        
+        } catch {
+            print("could not retrieve recipes from PersistenceHelper: \(error)")
+        }
+        return [Task]()
+    }
+    
+    
 
 }
