@@ -38,6 +38,9 @@
                                                     <rect key="frame" x="319" y="14" width="35" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="checkmark.rectangle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="completedButtonPressed:" destination="zng-Oc-StT" eventType="touchUpInside" id="MuF-aW-nge"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -54,7 +57,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBB-2A-QHB">
-                                                    <rect key="frame" x="20" y="15" width="42" height="21"/>
+                                                    <rect key="frame" x="20" y="15" width="311" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -63,7 +66,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="taskLabel" destination="NBB-2A-QHB" id="PUU-Kq-tO6"/>
+                                            <outlet property="taskLabel" destination="NBB-2A-QHB" id="b60-bZ-oN2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

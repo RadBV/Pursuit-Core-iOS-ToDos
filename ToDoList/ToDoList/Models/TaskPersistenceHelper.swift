@@ -25,4 +25,20 @@ struct TaskPersistenceHelper {
         try persistenceHelper.saveObject(newObject: task)
     }
     
+    func deleteTask(taskName: String) throws {
+        do {
+            let tasks =  try getTasks()
+            let newTasks = tasks.filter {$0.name != taskName}
+            try persistenceHelper.replaceArray(objects: newTasks)
+        }
+    }
+    
+    func changeTaskStatus(taskName: String, updatedTask: Task) throws {
+        do {
+            try deleteTask(taskName: taskName)
+            try persistenceHelper.saveObject(newObject: updatedTask)
+            
+        }
+    }
+    
 }

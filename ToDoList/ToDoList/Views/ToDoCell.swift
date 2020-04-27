@@ -26,6 +26,18 @@ class ToDoCell: UITableViewCell {
        super.init(coder: aDecoder)
     }
     
+    //MARK: - Functions
+    @IBAction func completedButtonPressed(_ sender: UIButton) {
+        let updatedTask = Task(name: taskLabel.text!, status: ToDoStatus.completed.rawValue)
+        try? TaskPersistenceHelper.manager.changeTaskStatus(taskName: taskLabel.text!, updatedTask: updatedTask)
+        do {
+            try print(TaskPersistenceHelper.manager.getTasks())
+        } catch {
+            print(error)
+        }
+    }
+    
+    
     func setUpSubviews() {
         contentView.addSubview(taskLabel)
         contentView.addSubview(completeButton)

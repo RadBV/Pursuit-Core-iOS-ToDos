@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
     var test = ["1","2","3"]
     
-    //MARK: - View Did Load
+    //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableViewConstraints()
@@ -32,6 +32,10 @@ class ViewController: UIViewController {
         loadOrganizedTasks()
         setUpDelegates()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadPersistenceData()
     }
     
     //MARK: - Functions

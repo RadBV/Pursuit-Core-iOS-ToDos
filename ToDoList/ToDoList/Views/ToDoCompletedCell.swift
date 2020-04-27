@@ -10,7 +10,7 @@ import UIKit
 
 class ToDoCompletedCell: UITableViewCell {
 
-    @IBOutlet weak var taskLabel: UIView!
+    @IBOutlet weak var taskLabel: UILabel!
     //MARK: - Initializer
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -21,7 +21,8 @@ class ToDoCompletedCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+       super.init(coder: coder)
+
     }
     
     func constrainTaskLabel() {
