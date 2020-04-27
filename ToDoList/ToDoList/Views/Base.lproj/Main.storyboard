@@ -62,6 +62,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskLabel" destination="NBB-2A-QHB" id="PUU-Kq-tO6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

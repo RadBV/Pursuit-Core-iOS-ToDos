@@ -14,8 +14,8 @@ class ToDoCompletedCell: UITableViewCell {
     //MARK: - Initializer
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setUpSubviews()
-        setUpConstraints()
+        contentView.addSubview(taskLabel)
+        constrainTaskLabel()
         
         
     }
@@ -24,12 +24,15 @@ class ToDoCompletedCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpSubviews() {
+    func constrainTaskLabel() {
+        taskLabel.translatesAutoresizingMaskIntoConstraints = false
         
-    }
-    
-    func setUpConstraints() {
-        
+        NSLayoutConstraint.activate([
+            taskLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+            taskLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            taskLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            taskLabel.widthAnchor.constraint(equalToConstant: 300)
+        ])
     }
     
     

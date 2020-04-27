@@ -25,7 +25,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             
             return cell
         } else if organizedTasks[indexPath.section].tasks[indexPath.row].status == ToDoStatus.completed.rawValue {
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCompletedCell", for: indexPath) as! ToDoCell
+            cell.taskLabel.text = organizedTasks[1].tasks[indexPath.row].name
+            return cell
         }
         
         return UITableViewCell()
