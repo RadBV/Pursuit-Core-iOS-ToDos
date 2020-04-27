@@ -14,6 +14,7 @@
 		1D483146245664F5000F452F /* TaskOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D483145245664F5000F452F /* TaskOrganizer.swift */; };
 		1D48314824566698000F452F /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D48314724566698000F452F /* PersistenceHelper.swift */; };
 		1D48314A245666AD000F452F /* TaskPersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D483149245666AD000F452F /* TaskPersistenceHelper.swift */; };
+		1D48314C24566935000F452F /* CreateTaskVC+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D48314B24566935000F452F /* CreateTaskVC+Constraints.swift */; };
 		1DDB0CFD24562D73009CA816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB0CFC24562D73009CA816 /* AppDelegate.swift */; };
 		1DDB0CFF24562D73009CA816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB0CFE24562D73009CA816 /* SceneDelegate.swift */; };
 		1DDB0D0124562D73009CA816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB0D0024562D73009CA816 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		1D483145245664F5000F452F /* TaskOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOrganizer.swift; sourceTree = "<group>"; };
 		1D48314724566698000F452F /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		1D483149245666AD000F452F /* TaskPersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPersistenceHelper.swift; sourceTree = "<group>"; };
+		1D48314B24566935000F452F /* CreateTaskVC+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateTaskVC+Constraints.swift"; sourceTree = "<group>"; };
 		1DDB0CF924562D73009CA816 /* toDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDB0CFC24562D73009CA816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DDB0CFE24562D73009CA816 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				1DFE71F92456382C00FF61FD /* VC+Constraints.swift */,
 				1D483139245645DE000F452F /* VC+Tableview.swift */,
+				1D48314B24566935000F452F /* CreateTaskVC+Constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				1D48313C245646C9000F452F /* ToDoCell.swift in Sources */,
 				1DFE71FA2456382C00FF61FD /* VC+Constraints.swift in Sources */,
 				1D48314424566333000F452F /* ToDoStatus.swift in Sources */,
+				1D48314C24566935000F452F /* CreateTaskVC+Constraints.swift in Sources */,
 				1D48314824566698000F452F /* PersistenceHelper.swift in Sources */,
 				1DFE71F82456374D00FF61FD /* CreateTaskVC.swift in Sources */,
 				1DDB0CFD24562D73009CA816 /* AppDelegate.swift in Sources */,
