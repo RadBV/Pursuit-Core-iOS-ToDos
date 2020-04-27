@@ -8,14 +8,28 @@
 
 import UIKit
 
-//extension ViewController: UITableViewDataSource, UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//    
-//    
-//}
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return organizedTasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return organizedTasks[section].tasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if organizedTasks[indexPath.section].tasks[indexPath.row].status == ToDoStatus.outstanding.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoCell
+            cell.taskLabel.text = organizedTasks[0].tasks[indexPath.row].name
+            
+            return cell
+        } else if organizedTasks[indexPath.section].tasks[indexPath.row].status == ToDoStatus.completed.rawValue {
+            
+        }
+        
+        return UITableViewCell()
+    }
+    
+    
+}

@@ -8,6 +8,11 @@
 
 import UIKit
 
-//struct TaskOrganizer {
-//    func separateTasks(tasks: [Task]) ->
-//}
+struct TaskOrganizer {
+    
+    func separateTasks(tasks: [Task]) -> [OrganizedTasks] {
+        let completedTasks = OrganizedTasks(tasks: tasks.filter { $0.status == ToDoStatus.completed.rawValue })
+        let outstandingTasks = OrganizedTasks(tasks:tasks.filter {$0.status == ToDoStatus.outstanding.rawValue}) 
+        return [outstandingTasks,completedTasks]
+    }
+}
