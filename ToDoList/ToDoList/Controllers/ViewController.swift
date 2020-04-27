@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+    
     
     //MARK: - Properties
     @IBOutlet weak var toDoListTableView: UITableView!
@@ -62,5 +63,12 @@ class ViewController: UIViewController {
         print(organizedTasks)
     }
     
+}
+
+extension ViewController: toDoCellDelegate {
+    func didTapCompleteButton() {
+        loadPersistenceData()
+        self.toDoListTableView.reloadData()
+    }
 }
 

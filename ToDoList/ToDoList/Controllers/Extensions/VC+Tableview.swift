@@ -22,13 +22,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if organizedTasks[indexPath.section].tasks[indexPath.row].status == ToDoStatus.outstanding.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoCell
             cell.taskLabel.text = organizedTasks[0].tasks[indexPath.row].name
-            
+            cell.delegate = self
             return cell
         } else if organizedTasks[indexPath.section].tasks[indexPath.row].status == ToDoStatus.completed.rawValue {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCompletedCell", for: indexPath) as! ToDoCompletedCell
             cell.taskLabel.text = organizedTasks[1].tasks[indexPath.row].name
             return cell
+            
         }
         
         return UITableViewCell()

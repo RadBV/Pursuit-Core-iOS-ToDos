@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol toDoCellDelegate {
+    func didTapCompleteButton()
+}
+
 class ToDoCell: UITableViewCell {
     
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
+    
+    var delegate: toDoCellDelegate?
     
     //MARK: - Initializer
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,11 +36,7 @@ class ToDoCell: UITableViewCell {
     @IBAction func completedButtonPressed(_ sender: UIButton) {
         let updatedTask = Task(name: taskLabel.text!, status: ToDoStatus.completed.rawValue)
         try? TaskPersistenceHelper.manager.changeTaskStatus(taskName: taskLabel.text!, updatedTask: updatedTask)
-        do {
-            try print(TaskPersistenceHelper.manager.getTasks())
-        } catch {
-            print(error)
-        }
+        delegate?.didTapCompleteButton()
     }
     
     
